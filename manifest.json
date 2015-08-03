@@ -1,0 +1,29 @@
+{
+  "manifest_version": 2,
+
+  "name": "Search Github",
+  "description": "This extension allows you to search all repositories on Github instead of the repository you are looking at.",
+  "version": "1.0",
+  "page_action": {
+          "default_icon": {
+            "19": "icon.png"
+          },
+          "default_title": "Search Github is enabled in this page."
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": [],
+      "js": ["scripts/searchGithub.js"]
+    }
+  ],
+  "permissions": [
+    "declarativeContent",
+    "contextMenus",
+    "tabs"
+  ],
+  "background" : {
+    "scripts": ["scripts/background.js"],
+    "persistent": false
+  }
+}
